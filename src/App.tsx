@@ -1,25 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Button, ButtonSemChildren, BotaoContadorUsandoEstado } from "./components/button";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {/* tudo que ta sendo enviado no formato de tag aberta exemplo abaixo (clique aqui),
+      tem seu nome padrao no react como children  */}
+      <Button> Clique aqui </Button>
+      <BotaoContadorUsandoEstado />
+      {/* botao sem ser com o children, rebendo de forma de tags fechadas os atributos */}
+      <ButtonSemChildren txt="Foda"/>
+      <Button />
+    </>
   );
 }
 
