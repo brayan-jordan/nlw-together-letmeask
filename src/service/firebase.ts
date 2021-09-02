@@ -1,4 +1,4 @@
-import * as firebase from "firebase/app";
+import  firebase from "firebase/app";
 
 // firebase recomenda que faca a importacao de cada servico que for utilizar,
 // como vamos utilizar autenticacao com google e banco de dados esses serao os importados
