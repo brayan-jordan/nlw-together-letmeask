@@ -1,16 +1,16 @@
-import { Button, ButtonSemChildren, BotaoContadorUsandoEstado } from "./components/button";
+import { Home } from "./pages/Home";
+import { NewRoom } from "./pages/NewRoom";
+import { BrowserRouter, Route } from 'react-router-dom'
+import { AuthContextProvider } from './contexts/AuthContext';
 
 function App() {
   return (
-    <>
-      {/* tudo que ta sendo enviado no formato de tag aberta exemplo abaixo (clique aqui),
-      tem seu nome padrao no react como children  */}
-      <Button> Clique aqui </Button>
-      <BotaoContadorUsandoEstado />
-      {/* botao sem ser com o children, rebendo de forma de tags fechadas os atributos */}
-      <ButtonSemChildren txt="Foda"/>
-      <Button />
-    </>
+    <BrowserRouter>
+      <AuthContextProvider>
+          <Route path="/" exact component={Home} /> 
+          <Route path="/rooms/new" component={NewRoom}/>
+      </AuthContextProvider>
+    </BrowserRouter>
   );
 }
 
