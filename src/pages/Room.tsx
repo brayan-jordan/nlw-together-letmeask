@@ -6,6 +6,7 @@ import { useParams } from 'react-router';
 import { FormEvent, useEffect, useState } from 'react';
 import { useAuth } from '../hooks/useAuth';
 import { database } from '../service/firebase';
+import { Question } from '../components/Question';
 
 type RoomParams = {
   id: string
@@ -130,7 +131,21 @@ export function Room() {
           </div>
         </form>
 
-        {JSON.stringify(questions)}
+        <div className="question-list">
+          {
+            questions.map(question => {
+              return (
+                <Question 
+                // essa key vai automaticamente pelo react, toda vez que faz um map e obrigatario fazer isso
+                // tendo em vista que todo component deve ter um indentificador unico
+                  key={question.id}
+                  content={question.content}
+                  author={question.author}
+                />
+              )
+            })
+          }
+        </div>
       </main>
     </div>
   )
