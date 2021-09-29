@@ -13,6 +13,17 @@
       > img {
         max-height: 45px;
       }
+
+      // esse sinal de maior so vai aplicar essa estilizacao caso realmente tenha essa div dentro
+      > div {
+        display: flex;
+        // espacos entre os elementos que estao com display flex
+        gap: 16px;
+
+        button {
+          height: 40px;
+        }
+      }
     }
   }
 
