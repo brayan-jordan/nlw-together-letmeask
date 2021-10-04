@@ -3,9 +3,6 @@ import { Button } from '../components/button'
 import { RoomCode } from '../components/RoomCode';
 import '../styles/room.scss';
 import { useParams } from 'react-router';
-import { FormEvent, useEffect, useState } from 'react';
-import { useAuth } from '../hooks/useAuth';
-import { database } from '../service/firebase';
 import { Question } from '../components/Question';
 import { useRoom } from '../hooks/useRoom';
 
@@ -15,9 +12,8 @@ type RoomParams = {
 }
 
 export function AdminRoom() {
-  const { user } = useAuth()
+  // const { user } = useAuth()
   const params = useParams<RoomParams>();
-  const [newQuestion, setNewQuestion] = useState('')
   const roomId = params.id
   const { questions, title } = useRoom(roomId)
 
